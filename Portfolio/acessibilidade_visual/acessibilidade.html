@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Mensagem Acessível</title>
+
+</head>
+
+<body>
+
+  <h1 id="titulo">Seja bem-vindo!</h1>
+
+  <p id="mensagem">Seja bem-vindo(a) ao nosso site, estamos aqui para ajudar. Conte conosco.</p>
+  
+  <button onclick="lerMensagem()" aria-label="Ouvir a mensagem de boas-vindas">
+    Ouvir mensagem
+  </button>
+
+  <script>
+    function lerMensagem() {
+
+      const texto = document.getElementById("mensagem").textContent;
+
+      const fala = new SpeechSynthesisUtterance(texto);
+
+      fala.lang = "pt-BR";
+
+      speechSynthesis.speak(fala);
+    }
+  </script>
+
+</body>
+</html>
